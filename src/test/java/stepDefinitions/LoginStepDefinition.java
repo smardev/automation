@@ -49,5 +49,16 @@ public class LoginStepDefinition {
 	}
 
 
+	@When("User try to connect with invalid Admin {string} and {string} and connect")
+	public void userTryToConnectWithInvalidAdminAndAndConnect(String username, String password) throws InterruptedException {
+		//		login = new pages.LoginPage(helper.Config.driver);
+		login = new pages.LoginPage();
 
+		login.connect(username, password);
+
+	}
+
+	@Then("User is still in login Page")
+	public void userIsStillInLoginPage() {
+	}
 }

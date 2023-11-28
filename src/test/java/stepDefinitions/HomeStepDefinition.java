@@ -9,7 +9,7 @@ public class HomeStepDefinition {
 	
 	
 	
-	@When("^Admin creates a room with {string} and {string} and {string} and {string} and {string}")
+	@When("Admin creates a room with {string} and {string} and {string} and {string} and {string}")
 	public void admin_try_to_connect_with_valid_username_and_password_and_connect(String roomId, String type)
 			throws InterruptedException {
 
@@ -20,12 +20,12 @@ public class HomeStepDefinition {
 
 	}
 
-	@Then("Admin is redirected to Home page that contains btn {string}")
-	public void admin_is_redirected_to_home_page_that_contains_message(String msg) throws InterruptedException {
-
-
-
-	}
+//	@Then("Admin is redirected to Home page that contains btn {string}")
+//	public void admin_is_redirected_to_home_page_that_contains_message(String msg) throws InterruptedException {
+//
+//
+//
+//	}
 
 	
 	

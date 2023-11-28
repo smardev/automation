@@ -14,10 +14,11 @@ import io.cucumber.junit.CucumberOptions;
 		
 		glue = "stepDefinitions",
 		
-		plugin = { "pretty", "html:target/orange-cucumber-report.html" }
-		
-		
-		)
+		plugin = { "pretty", "html:target/cucumber-report.html" },
+
+		monochrome = true
+
+)
 
 public class Runner {
 
