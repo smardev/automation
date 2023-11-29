@@ -12,7 +12,7 @@ public class Config {
 	static {
 		// Set the system property for the WebDriver depending on your OS
 		// For example, if you're on Windows:
-		System.setProperty("webdriver.chrome.driver", "path/to/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
 
 		// Or, if you're on Mac:
 		// System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver-mac");

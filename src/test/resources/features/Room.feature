@@ -21,17 +21,6 @@ Feature:
       |     102 | Suite | true       |   450 | TV, Radio, Refreshments      |
 
 
-  Scenario Outline: Creating a room with various details
-    Given The admin is on the room creation page
-    When The admin selects room type "<Type>"
-    And The admin sets accessibility to "<Accessible>"
-    And The admin creates a room with the rest of details "<RoomNumber>", "<Price>", and "<RoomDetails>"
-    Then The room should be created successfully
-
-    Examples:
-      | RoomNumber | Type   | Accessible | Price | RoomDetails        |
-      | 301        | Single | false      | 120   | WiFi, Safe         |
-      | 302        | Double | true       | 150   | TV, Radio, Refreshments |
 
 
 

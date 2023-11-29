@@ -7,7 +7,7 @@ Feature:
     Given User is on automationintesting "https://automationintesting.online/#/admin"
     And Admin is connected with "admin" and "password"
 
-  Scenario: Empty Room Creation
+ Scenario: Empty Room Creation
     When Admin try to create an emty room
     Then A message "Room name must be set" appear
 
@@ -17,8 +17,11 @@ Feature:
 
     Examples: 
       | roomId | type  | accessible | price | roomDetails |
-      |     25 | Twin  | true       |   500 | Wifi        |
-      |     26 | Suite | true       |   450 | Wifi        |
+      |     101 | Twin  | true       |   500 | Wifi,Safe      |
+      |     102 | Suite | true       |   450 | TV, Radio, Refreshments      |
+
+
+
 
 
 

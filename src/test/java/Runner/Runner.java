@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		
 		
-		features = "src/test/resources/features/	Room.feature",
+		features = "src/test/resources/features/Room.feature",
 		
 		glue = "stepDefinitions",
 		
