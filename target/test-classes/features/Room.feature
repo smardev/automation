@@ -1,7 +1,7 @@
-Feature: 
-  automationintesting Home page test suite
+Feature:
+  Room Creation Validation
   
-   As Admin i want to perform room tests on Home Page
+   As Admin i want to perform room tests on Room Page
 
   Background: 
     Given User is on automationintesting "https://automationintesting.online/#/admin"
@@ -19,3 +19,13 @@ Feature:
       | roomId | type  | accessible | price | roomDetails |
       |     25 | Twin  | true       |   500 | Wifi        |
       |     26 | Suite | true       |   450 | Wifi        |
+
+
+
+
+
+
+
+
+
+
