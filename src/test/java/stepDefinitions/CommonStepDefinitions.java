@@ -9,6 +9,8 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import pages.LoginPage;
 
+import static helper.Config.driver;
+
 public class CommonStepDefinitions {
 	
     pages.LoginPage page;
@@ -18,17 +20,17 @@ public class CommonStepDefinitions {
 
 		
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-        helper.Config.driver = new ChromeDriver();
+        driver = new ChromeDriver();
 
 	}
 
 	@Given("User is on automationintesting {string}")
 	public void user_is_on_autoamtion_page(String url) {
 		
-		page = new LoginPage();
+		page = new LoginPage(driver);
 
        page.goToUrl(url);
-       helper.Config.driver.manage().window().maximize();
+       driver.manage().window().maximize();
 
 	}
 	
@@ -36,7 +38,7 @@ public class CommonStepDefinitions {
 	@Given("Admin is connected with {string} and {string}")
 		public void admin_is_connected(String usrname, String password) throws InterruptedException {
 		
-		page = new LoginPage();
+		page = new LoginPage(driver);
 		
 		page.connect(usrname, password);
 		

@@ -1,23 +1,28 @@
 package helper;
 
-import java.time.Duration;
+		import org.openqa.selenium.WebDriver;
+		import org.openqa.selenium.chrome.ChromeDriver;
 
-import org.openqa.selenium.WebDriver;
+		import java.time.Duration;
 
 public class Config {
 
 	public static WebDriver driver;
 
-	public static void ConfDriver() {
+	static {
+		// Set the system property for the WebDriver depending on your OS
+		// For example, if you're on Windows:
+		System.setProperty("webdriver.chrome.driver", "path/to/chromedriver.exe");
 
-		System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver-mac-arm64/chromedriver");
+		// Or, if you're on Mac:
+		// System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver-mac");
 
+		// Initialize the driver object
+		driver = new ChromeDriver();
+
+		// Set a default implicit wait (if desired)
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 
-	public static void delai(long x) {
-
-		Config.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(x));
-
-	}
-
+	// Other methods or fields if needed
 }

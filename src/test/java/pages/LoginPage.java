@@ -12,8 +12,9 @@ public class LoginPage extends BasePage {
 	String xpathPassword = "//input[@id='password']";
 	String xpathConnect = "//button[@id='doLogin']";
 
-
-
+	public LoginPage(WebDriver driver) {
+		super(driver);
+	}
 
 
 	public void connect(String usernam, String passwod) throws InterruptedException {

@@ -6,6 +6,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.RoomPage;
 
+import static helper.Config.driver;
+
 public class LoginStepDefinition {
 
     pages.LoginPage login;
@@ -18,7 +20,7 @@ public class LoginStepDefinition {
 
 //		login = new pages.LoginPage(helper.Config.driver);
 		
-		login = new pages.LoginPage();
+		login = new pages.LoginPage(driver);
 
 		login.connect(username, password);
 
@@ -28,7 +30,7 @@ public class LoginStepDefinition {
 	@Then("Admin is redirected to Home page that contains btn {string}")
 	public void admin_is_redirected_to_home_page_that_contains_message(String msg) throws InterruptedException {
 
-		d = new RoomPage();
+		d = new RoomPage(driver);
 		
 		// J'ai ajouté Thread.sleep car le wait implicite n'a pas fonctionné 
 		Thread.sleep(5000);
@@ -44,7 +46,7 @@ public class LoginStepDefinition {
 	@When("User try to connect with invalid Admin {string} and {string} and connect")
 	public void userTryToConnectWithInvalidAdminAndAndConnect(String username, String password) throws InterruptedException {
 		//		login = new pages.LoginPage(helper.Config.driver);
-		login = new pages.LoginPage();
+		login = new pages.LoginPage(driver);
 
 		login.connect(username, password);
 
