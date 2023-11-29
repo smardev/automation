@@ -1,11 +1,8 @@
 package stepDefinitions;
 
-import org.junit.Assert;
-
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class HomeStepDefinition {
+public class RoomStepDefinition {
 	
 	
 	
