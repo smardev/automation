@@ -72,13 +72,14 @@ public class RoomPage extends BasePage {
 	// XPaths for the web elements
 		String frontBtnXpath = "//a[@id='frontPageLink']";
 
-	private String roomNumberInputXpath = "//input[@id='roomNumber']";
-	private String roomTypeDropdownXpath = "//select[@id='roomType']";
-	private String accessibleDropdownXpath = "//select[@id='accessible']";
-	private String priceInputXpath = "//input[@id='price']";
-	private String createButtonXpath = "//button[@id='createRoom']";
+
+	private static String roomNumberInputXpath = "//input[@id='roomNumber']";
+	private static String roomTypeDropdownXpath = "//select[@id='roomType']";
+	private static String accessibleDropdownXpath = "//select[@id='accessible']";
+	private static String priceInputXpath = "//input[@id='price']";
+	private  String createButtonXpath = "//button[@id='createRoom']";
 	// XPath template for amenities checkbox, %s will be replaced by the amenity name
-	private String amenityCheckboxXpathTemplate = "//input[@type='checkbox' and following-sibling::label[normalize-space(text())='%s']]";
+	private static String amenityCheckboxXpathTemplate = "//input[@type='checkbox' and following-sibling::label[normalize-space(text())='%s']]";
 
 	public RoomPage(WebDriver driver) {
 		super(driver);
@@ -93,7 +94,11 @@ public class RoomPage extends BasePage {
 		roomNumberInput.clear();
 		roomNumberInput.sendKeys(number);
 	}
+		public void createEmptyRoom() {
 
+		click(createButtonXpath);
+
+	}
 	public void selectRoomType(String type) {
 		WebElement roomTypeDropdown = driver.findElement(By.xpath(roomTypeDropdownXpath));
 		new Select(roomTypeDropdown).selectByVisibleText(type);

@@ -38,8 +38,11 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.When;
+import io.cucumber.java.en.Then;
 import pages.RoomPage;
 import helper.Config;
+
+import static helper.Config.driver;
 
 public class RoomStepDefinition {
 
@@ -48,6 +51,22 @@ public class RoomStepDefinition {
 	public RoomStepDefinition() {
 		roomPage = new RoomPage(Config.driver);
 	}
+
+
+
+	@When("Admin try to create an emty room")
+	public void admin_try_to_create_an_empty_room() {
+		 roomPage = new pages.RoomPage(driver);
+
+		roomPage.createEmptyRoom();	}
+
+	@Then("A message {string} appear")
+	public void a_message_appear(String message) {
+		// implementation code
+		// you might want to find the element that contains the message and assert its text
+	}
+
+// And similar for the other steps
 
 	@When("Admin creates a room with {string}, {string}, {string}, {string}, and {string}")
 	public void admin_creates_a_room_with_details(String roomId, String type, String accessible, String price, String roomDetails) throws InterruptedException {
