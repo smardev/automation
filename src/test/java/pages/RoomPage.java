@@ -3,11 +3,9 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import com.sun.org.apache.bcel.internal.generic.Select;
-
 import helper.Config;
 
-public class HomePage extends BasePage {
+public class RoomPage extends BasePage {
 
 	String frontBtnXpath = "//a[@id='frontPageLink']";
 
