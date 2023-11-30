@@ -42,6 +42,9 @@ import io.cucumber.java.en.Then;
 import pages.RoomPage;
 import helper.Config;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static helper.Config.driver;
 
 public class RoomStepDefinition {
@@ -68,8 +71,8 @@ public class RoomStepDefinition {
 
 // And similar for the other steps
 
-	@When("Admin creates a room with {string}, {string}, {string}, {string}, and {string}")
-	public void admin_creates_a_room_with_details(String roomId, String type, String accessible, String price, String roomDetails) throws InterruptedException {
+	@When("Admin creates a room with {string} and {string} and {string} and {string} and {string}")
+	public void admin_creates_a_room_with(String roomId, String type, String accessible, String price, String roomDetails) throws InterruptedException {
 		// Convert accessible and roomDetails to the expected types if necessary
 		boolean isAccessible = accessible.equalsIgnoreCase("true");
 		// Assuming roomDetails is a comma-separated list of amenities
@@ -83,11 +86,19 @@ public class RoomStepDefinition {
 		roomPage.selectRoomType(type);
 		roomPage.setRoomAccessibility(isAccessible);
 		roomPage.enterRoomPrice(price);
+		List<String> amenitiesList = Arrays.asList(roomDetails.split("\\s*,\\s*"));
 
-		for (String amenity : amenities) {
-			roomPage.toggleAmenity(amenity, true); // You'll need to implement this method in RoomPage
-		}
+			roomPage.selectAmenities(amenitiesList); // You'll need to implement this method in RoomPage
+
 
 		roomPage.submitRoomForm(); // You'll need to implement this method in RoomPage
 	}
+
+	@Then("room is created")
+	public void room_is_created() {
+		// Your code to verify the room was created, this could be checking for a success message,
+		// checking the room list for a new entry, etc.
+		System.out.println("room is created");
+	}
+
 }

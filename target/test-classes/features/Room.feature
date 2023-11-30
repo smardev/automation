@@ -17,8 +17,8 @@ Feature:
 
     Examples: 
       | roomId | type  | accessible | price | roomDetails |
-      |     101 | Twin  | true       |   500 | Wifi,Safe      |
-      |     102 | Suite | true       |   450 | TV, Radio, Refreshments      |
+      |     101 | Twin  | true       |   500 | WiFi,Safe      |
+      |     102 | Suite | true       |   450 | TV,Radio,Refreshments      |
 
 
 
